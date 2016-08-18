@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from dailywalk import views as dailywalk_views
 
 urlpatterns = [
+    url(r'^dailywalk/',dailywalk_views.index,name="home"),
     url(r'^admin/', admin.site.urls),
 ]
