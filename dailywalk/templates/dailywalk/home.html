@@ -6,6 +6,13 @@
     <link type="text/css" href="/static/css/home.css" rel="stylesheet"/>
 </head>
 <body>
-    <h2>Daily Walk is a health way for you!</h2>
+    {% for blog in blogs %}
+        <div>
+        <p>created: {{ blog.created_date }}</p>
+        <h1><a href="admin/dailywalk/blog/{{ blog.id }}/change/">{{ blog.title }}</a></h1>
+        <p>{{ blog.text|linebreaks }}</p>
+    </div>
+    {% endfor %}
+
 </body>
 </html>
