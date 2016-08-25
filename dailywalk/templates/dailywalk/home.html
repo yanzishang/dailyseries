@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>dailywalk</title>
-    <link type="text/css" href="/static/css/home.css" rel="stylesheet"/>
+    <link href="/static/css/home.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
-    {% for blog in blogs %}
-        <div>
+{% for blog in blogs %}
+    <div>
         <p>created: {{ blog.created_date }}</p>
         <h1><a href="admin/dailywalk/blog/{{ blog.id }}/change/">{{ blog.title }}</a></h1>
         <p>{{ blog.text|linebreaks }}</p>
     </div>
-    {% endfor %}
+{% endfor %}
 
 </body>
 </html>
