@@ -19,5 +19,8 @@ from dailywalk import views as dailywalk_views
 
 urlpatterns = [
     url(r'^$', dailywalk_views.index,name='dailywalk'),
+    url(r'^blog/(?P<pk>[0-9]+)/$',dailywalk_views.blog_detail, name='blog_detail'),
+    url(r'^blog/new/$',dailywalk_views.blog_new, name='blog_new'),
+    url(r'^blog/(?P<pk>[0-9]+)/edit/$',dailywalk_views.blog_edit, name='blog_edit'),
     url(r'^admin/', admin.site.urls),
 ]

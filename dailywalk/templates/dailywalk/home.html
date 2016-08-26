@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>dailywalk</title>
-    <link href="/static/css/home.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-</head>
-<body>
-{% for blog in blogs %}
-    <div>
-        <p>created: {{ blog.created_date }}</p>
-        <h1><a href="admin/dailywalk/blog/{{ blog.id }}/change/">{{ blog.title }}</a></h1>
-        <p>{{ blog.text|linebreaks }}</p>
-    </div>
-{% endfor %}
+{% extends "dailywalk/base.html" %}
+{% block content %}
+    {% for blog in blogs %}
+        <div class="blog">
+            <div class="date">
+                created: {{ blog.created_date }}
+            </div>
+            <h1><a href="{% url "blog_detail" pk=blog.pk %}">{{ blog.title }}</a></h1>
+            <p>{{ blog.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
 
 </body>
 </html>
