@@ -25,7 +25,7 @@ def blog_new(request):
             blog.author = request.user
             blog.created_date = timezone.now()
             blog.save()
-            return redirect('dailywalk.views.blog_detail', pk=blog.pk)
+            return redirect('/blog/'+ str(blog.id) +'/', pk=blog.pk)
     else:
         form = BlogForm()
         return render(request, 'dailywalk/blog_edit.html', {'form': form})
