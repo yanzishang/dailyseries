@@ -6,7 +6,7 @@ from .models import Column, Article
 # Register your models here.
 
 class ColumnAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'intro',)
+    list_display = ('name', 'slug', 'intro','nav_display','home_display')
 
 
 class ArticleAdmin(admin.ModelAdmin):
