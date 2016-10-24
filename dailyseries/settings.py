@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'dailyseries.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'python',
+        'NAME': 'dailyseries',
         'USER': 'root',
         'PASSWORD': '123456',
         'HOST': 'localhost',
